@@ -44,7 +44,7 @@ class FeatureExtractor:
 
     @staticmethod
     def compute_mfcc(audio_file, sample_rate, n_fft, hop_length, n_mfcc, deltas=False):
-        mfccs = librosa.feature.mfcc(audio_file,
+        mfccs = librosa.feature.mfcc(y=audio_file,
                                     sr=sample_rate,
                                     n_fft=n_fft,
                                     n_mfcc=n_mfcc,
