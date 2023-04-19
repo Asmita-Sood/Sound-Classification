@@ -17,7 +17,7 @@ class FeatureExtractor:
         self.max_padding=self.config['max_padding']
 
     def extract_features(self, filepath):
-        # Load 4 seconds of audio (as our model has been trained only on 4s samples)
+        # Load 4 seconds of audio 
         audio_file, sample_rate = librosa.load(filepath, sr=self.sample_rate, res_type='kaiser_fast', duration=4)
         if self.mode == 'mfcc':
             audio_features = self.compute_mfcc(audio_file, self.sample_rate, self.n_fft, self.hop_length, self.n_mfcc, self.deltas)
